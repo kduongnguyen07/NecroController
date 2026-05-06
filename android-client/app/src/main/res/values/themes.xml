@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.RemoteShutdown" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/nero_purple</item>
+        <item name="colorSecondary">@color/nero_teal</item>
+        <item name="android:colorBackground">@color/nero_bg</item>
+        <item name="android:statusBarColor">@color/nero_bg</item>
+        <item name="android:navigationBarColor">@color/nero_bg</item>
+        <item name="android:windowBackground">@color/nero_bg</item>
+    </style>
+
+    <style name="Theme.RemoteShutdown" parent="Base.Theme.RemoteShutdown" />
+</resources>

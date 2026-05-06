@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nero_bg"
+    android:fitsSystemWindows="true"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="28dp">
+
+        <!-- Header -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="CPU" android:textColor="@color/nero_purple" android:textSize="32sp" android:textStyle="bold" />
+            <TextView android:id="@+id/tv_cpu_name" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Đang lấy thông số..." android:textColor="@color/nero_text_dim" android:textSize="13sp"
+                android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="% Utilization" android:textColor="#66FFFFFF" android:textSize="13sp" android:layout_marginBottom="12dp"/>
+
+        <!-- Chart Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/nero_surface"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="4dp"
+            app:strokeColor="#2603DAC5"
+            app:strokeWidth="1dp"
+            android:layout_marginBottom="24dp">
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart_cpu"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:padding="8dp"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Stats Grid Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/nero_surface"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="4dp"
+            app:strokeColor="#26BB86FC"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- Row 1 -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="2" android:layout_marginBottom="20dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginEnd="12dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Utilization" android:textColor="#66FFFFFF" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_util" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0%" android:textColor="@color/nero_teal" android:textSize="24sp" android:textStyle="bold"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="8dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RAM Used" android:textColor="#66FFFFFF" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_ram" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0 GB" android:textColor="@color/nero_purple" android:textSize="24sp" android:textStyle="bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Row 2 -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="2" android:layout_marginBottom="20dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginEnd="12dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Processes" android:textColor="#66FFFFFF" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_procs" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="@color/nero_text" android:textSize="20sp" android:textStyle="bold"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="8dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Threads" android:textColor="#66FFFFFF" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_threads" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:textColor="@color/nero_text" android:textSize="20sp" android:textStyle="bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Row 3 -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="2" android:layout_marginBottom="20dp">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginEnd="12dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Up time" android:textColor="#66FFFFFF" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_uptime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0:00:00" android:textColor="@color/nero_text" android:textSize="20sp" android:textStyle="bold"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="8dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="GPU RTX" android:textColor="#66FFFFFF" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_gpu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0% - 0°C" android:textColor="@color/nero_teal" android:textSize="20sp" android:textStyle="bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Row 4: PC Time & Battery -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="2">
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginEnd="12dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PC Time" android:textColor="#66FFFFFF" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_pc_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="--:--" android:textColor="@color/nero_purple" android:textSize="20sp" android:textStyle="bold"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="8dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Power / Battery" android:textColor="#66FFFFFF" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_battery" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Đang tải..." android:textColor="@color/nero_teal" android:textSize="20sp" android:textStyle="bold"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</ScrollView>

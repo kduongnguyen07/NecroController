@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- VLC Video Surface -->
+    <org.videolan.libvlc.util.VLCVideoLayout
+        android:id="@+id/video_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Overlay: Top Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:background="#80000000">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_stream_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:cardBackgroundColor="#33BB86FC"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#66BB86FC"
+            app:strokeWidth="1dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="✕"
+                android:textColor="#BB86FC"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="14dp"
+            android:text="🔴 LIVE STREAM"
+            android:textColor="#03DAC5"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            app:cardBackgroundColor="#33FF0000"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#66FF0000"
+            app:strokeWidth="1dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="● LIVE"
+                android:textColor="#FF4444"
+                android:textSize="11sp"
+                android:textStyle="bold"/>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <!-- Overlay: Bottom Info -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="32dp"
+        app:cardBackgroundColor="#80121212"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:strokeColor="#3303DAC5"
+        app:strokeWidth="1dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:text="UDP Stream • 1280×720 • 60fps • H.264"
+            android:textColor="#B3FFFFFF"
+            android:textSize="11sp"/>
+    </com.google.android.material.card.MaterialCardView>
+</FrameLayout>

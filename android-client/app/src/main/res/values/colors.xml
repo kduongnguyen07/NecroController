@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="nero_bg">#FF121212</color>
+    <color name="nero_surface">#FF1A1A2E</color>
+    <color name="nero_purple">#FFBB86FC</color>
+    <color name="nero_teal">#FF03DAC5</color>
+    <color name="nero_text">#FFFFFFFF</color>
+    <color name="nero_text_dim">#B3FFFFFF</color>
+    <color name="nero_danger">#FFD32F2F</color>
+    <color name="nero_card">#FF1E1E2E</color>
+</resources>
